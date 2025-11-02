@@ -1,0 +1,47 @@
+<ion-content class="login-background">
+  <div class="login-container">
+    <!-- Logo -->
+    <div class="logo">
+      <ion-img src="assets/img/coracao.png" alt="Logo do app"></ion-img>
+    </div>
+
+    <!-- Input Email -->
+    <ion-item class="input-field">
+      <img src="assets/img/email_1.png" alt="Ícone de Email" id="email-icon" />
+      <ion-input type="email" placeholder="E-mail" [(ngModel)]="email"></ion-input>
+    </ion-item>
+
+    <!-- Input Senha -->
+    <ion-item class="input-field">
+      <img src="assets/img/lock.png" alt="Ícone de Senha" id="password-icon" />
+      <ion-input type="password" placeholder="Senha" [(ngModel)]="password"></ion-input>
+    </ion-item>
+
+    <!-- Mensagem de erro -->
+    <div *ngIf="error" class="error-message">
+      {{ error }}
+    </div>
+
+    <!-- Esqueceu a senha -->
+    <div class="ion-text-end forgot-password-wrapper">
+      <ion-button (click)="goTocadastro()" fill="clear">
+        Esqueceu sua senha?
+      </ion-button>
+    </div>
+
+    <!-- Botão login email/senha -->
+    <ion-button expand="block" class="login-button-primary" (click)="loginEmail()">
+      CONECTE-SE
+    </ion-button>
+
+    <!-- Botão login Google -->
+    <ion-button expand="block" color="danger" (click)="loginGoogle()">
+      LOGIN COM GOOGLE
+    </ion-button>
+
+    <!-- Botão criar conta -->
+    <ion-button (click)="goTocadastro()" expand="block" fill="outline" class="login-button-secondary ion-margin-top">
+      CRIAR UMA CONTA
+    </ion-button>
+  </div>
+</ion-content>

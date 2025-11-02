@@ -1,0 +1,91 @@
+.login-background {
+  --background: #ffffff; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.login-container {
+  width: 90%;
+  max-width: 380px;
+  background: linear-gradient(to bottom, #4da3ff -0.7%, #ffffff 27%);
+  border-radius: 20px;
+  padding: 100px 50px 70px 50px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  position: relative;
+  margin: auto;
+  text-align: center; 
+}
+
+.logo {
+  margin-bottom: 40px; 
+  width: 5cm;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.input-field {
+  position: relative; 
+  --background: white; 
+  --inner-border-width: 0;
+  --border-width: 1px; 
+  --border-color: #ccc;
+  --border-radius: 12px; 
+  
+  color: #555; 
+  font-size: 20px; 
+  width: 100%; 
+  margin: 0 auto 15px auto;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); 
+  text-align: left; 
+}
+
+#email-icon, #password-icon {
+  position: absolute; 
+  z-index: 10;
+  
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  
+  width: 20px;
+  height: 20px;
+}
+
+.input-field ion-input {
+  --background: transparent; 
+  --padding-start: 40px; 
+}
+
+.forgot-password-wrapper {
+  margin-top: 5px;
+  margin-bottom: 25px;
+  text-align: right;
+}
+
+.forgot-password {
+  color: #3880ff; 
+  font-size: 0.9em;
+  text-decoration: none; 
+}
+
+.login-button-primary {
+  --background: #3880ff; 
+  --border-radius: 10px;
+  height: 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.login-button-secondary {
+  --background: transparent;
+  --color: #3880ff; 
+  --border-color: #3880ff; 
+  --border-width: 2px;
+  --border-radius: 10px;
+  height: 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+}

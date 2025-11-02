@@ -1,0 +1,42 @@
+/* Fundo do corpo */
+:host {
+  display: block;
+  background-color: #ffffff;
+  min-height: 100vh;
+  color: #000000; /* cor padrão do texto */
+}
+
+.header {
+  background-color: #007aff;
+  color: white;
+  padding: 16px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  text-align: center;
+}
+
+.container {
+  padding: 16px;
+}
+
+.card {
+  background: #ffffff;
+  color: #000000;
+  padding: 16px;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+:host {
+  display: block;
+  background-color: #ffffff;
+  min-height: 100vh;
+  color: #000000;
+  overflow-y: auto; /* <-- Isso permite rolagem */
+}

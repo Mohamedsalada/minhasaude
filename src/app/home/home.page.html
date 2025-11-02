@@ -1,0 +1,110 @@
+<ion-content>
+  <div class="container">
+    <!-- Header com saudação -->
+    <div class="header">
+      <h1 class="greeting" *ngIf="userName">Olá, {{ userName }}</h1>
+      <div class="profile-icon">
+        <ion-icon name="person"></ion-icon>
+      </div>
+    </div>
+
+    <!-- IMC Card -->
+    <div class="card">
+      <div class="card-content">
+        <div class="card-left">
+          <div class="card-title">IMC</div>
+          <div class="card-value">{{ imc }}</div>
+          <div class="card-status">{{ imcStatus }}</div>
+        </div>
+        <div class="card-icon">
+          <ion-icon name="scale-outline"></ion-icon>
+        </div>
+      </div>
+    </div>
+
+    <!-- Água Card -->
+    <div class="card">
+      <div class="card-content">
+        <div class="card-left">
+          <div class="card-title">Água</div>
+          <div class="card-value">
+            {{ waterCurrent.toFixed(2) }} <span class="unit">/ {{ waterGoal }} L</span>
+          </div>
+
+          <div class="progress-bar" role="progressbar" aria-valuenow="{{ waterCurrent }}" aria-valuemin="0" aria-valuemax="{{ waterGoal }}">
+            <div class="progress-fill water" [style.width.%]="waterPercentage"></div>
+          </div>
+
+          <div class="adjust-buttons">
+            <ion-button fill="clear" size="small" (click)="decrementWater()">−</ion-button>
+            <ion-button fill="clear" size="small" (click)="incrementWater()">+</ion-button>
+          </div>
+        </div>
+        <div class="card-icon">
+          <ion-icon name="water-outline"></ion-icon>
+        </div>
+      </div>
+    </div>
+
+    <!-- Proteínas Card -->
+    <div class="card">
+      <div class="card-content">
+        <div class="card-left">
+          <div class="card-title">Proteínas</div>
+          <div class="card-value">
+            {{ proteinCurrent }} <span class="unit">/ {{ proteinGoal }} g</span>
+          </div>
+
+          <div class="progress-bar" role="progressbar" aria-valuenow="{{ proteinCurrent }}" aria-valuemin="0" aria-valuemax="{{ proteinGoal }}">
+            <div class="progress-fill protein" [style.width.%]="proteinPercentage"></div>
+          </div>
+
+          <div class="adjust-buttons">
+            <ion-button fill="clear" size="small" (click)="decrementProtein()">−</ion-button>
+            <ion-button fill="clear" size="small" (click)="incrementProtein()">+</ion-button>
+          </div>
+        </div>
+        <div class="card-icon">
+          <ion-icon name="barbell-outline"></ion-icon>
+        </div>
+      </div>
+    </div>
+
+    <!-- ✅ Botão para ir para Sobre -->
+    <div class="menu-button-container" style="text-align: center; margin: 20px 0;">
+      <ion-button (click)="goToSobrenos()" expand="block" color="tertiary">
+        Sobre
+      </ion-button>
+    </div>
+
+  </div>
+</ion-content>
+
+<!-- Footer com barra de abas -->
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="home" (click)="goToHome()">
+          <ion-icon name="home-outline"></ion-icon>
+          <ion-label>Início</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="treinos" (click)="goToTreinos()">
+          <ion-icon name="barbell-outline"></ion-icon>
+          <ion-label>Treinos</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="progress" (click)="goToProgresso()">
+          <ion-icon name="trending-up-outline"></ion-icon>
+          <ion-label>Progresso</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="settings" (click)="goToConfiguracoes()">
+          <ion-icon name="settings-outline"></ion-icon>
+          <ion-label>Configurações</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>

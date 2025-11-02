@@ -1,0 +1,76 @@
+ion-content {
+  --background: #f9f9f9;
+}
+
+/* Texto de recomendação */
+.recommendation {
+  font-size: 0.95em;
+  color: #444;
+  margin: 10px 0 20px 16px;
+  font-weight: 500;
+}
+
+/* Cartões de treino */
+.workout-card {
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 16px;
+}
+
+/* Ícones de treino */
+.workout-icon {
+  font-size: 2em;
+  color: #3c3c3c;
+}
+
+/* Coluna centralizada para o ícone */
+.icon-col {
+  display: flex;
+  justify-content: center;
+}
+
+/* Título do treino */
+.workout-title {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 4px;
+}
+
+/* Informações de tempo e nível */
+.workout-info {
+  font-size: 0.9em;
+  color: #666;
+  margin: 0;
+}
+
+/* Botão "Começar" */
+.start-button {
+  --background: #28a745; // Verde
+  --color: white;
+  font-weight: 600;
+  padding: 0 16px;
+  height: 36px;
+  font-size: 0.9em;
+  text-transform: none;
+}
+
+/* Rodapé */
+ion-tab-bar {
+  --background: #fff;
+  border-top: 1px solid #ddd;
+}
+
+ion-tab-button {
+  --color: #888;
+  --color-selected: #007aff;
+}
+
+ion-tab-button ion-icon {
+  font-size: 1.4em;
+}
+
+ion-tab-button ion-label {
+  font-size: 0.75em;
+}

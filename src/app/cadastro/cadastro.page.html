@@ -1,0 +1,89 @@
+<!-- src/app/cadastro/cadastro.page.html -->
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-icon name="barbell-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title>Criar Conta</ion-title>
+    <ion-buttons slot="end">
+      <ion-icon name="leaf-outline"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="form-container">
+    <ion-item class="input-item">
+      <ion-icon name="person-outline" slot="start"></ion-icon>
+      <ion-input #nome label="Nome Completo" labelPlacement="floating" placeholder="Seu nome"></ion-input>
+    </ion-item>
+
+    <ion-item class="input-item">
+      <ion-icon name="mail-outline" slot="start"></ion-icon>
+      <ion-input #email label="Email" labelPlacement="floating" type="email" placeholder="seu@email.com"></ion-input>
+    </ion-item>
+
+    <ion-item class="input-item">
+      <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+      <ion-input #senha label="Senha" labelPlacement="floating" type="password" placeholder="Sua senha"></ion-input>
+    </ion-item>
+
+    <ion-item class="input-item">
+      <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+      <ion-input #confirmar label="Confirmar Senha" labelPlacement="floating" type="password" placeholder="Confirme sua senha"></ion-input>
+    </ion-item>
+
+    <ion-row class="input-row">
+      <ion-col>
+        <ion-item class="input-item">
+          <ion-icon name="scale-outline" slot="start"></ion-icon>
+          <ion-input #peso label="Peso (kg)" labelPlacement="floating" type="number" placeholder="0"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item class="input-item">
+          <ion-icon name="accessibility-outline" slot="start"></ion-icon>
+          <ion-input #altura label="Altura (cm)" labelPlacement="floating" type="number" placeholder="0"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="input-row">
+      <ion-col>
+        <ion-item class="input-item">
+          <ion-icon name="transgender-outline" slot="start"></ion-icon>
+          <ion-input #genero label="Gênero" labelPlacement="floating" placeholder="Masculino/Feminino"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item class="input-item">
+          <ion-select #biotipo label="Biótipo" labelPlacement="floating" value="ectomorfo" placeholder="Selecione">
+            <ion-select-option value="ectomorfo">Ectomorfo</ion-select-option>
+            <ion-select-option value="mesomorfo">Mesomorfo</ion-select-option>
+            <ion-select-option value="endomorfo">Endomorfo</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-button
+      expand="block"
+      class="register-button"
+      (click)="register(email.value?.toString() || '', senha.value?.toString() || '', confirmar.value?.toString() || '')">
+      Registrar
+    </ion-button>
+
+    <!-- Mensagem de erro -->
+    <ion-text color="danger" *ngIf="error">
+      <p class="ion-padding-top">{{ error }}</p>
+    </ion-text>
+
+    <div class="login-link">
+      <p> Já tem uma conta?</p>
+      <div class="social-icons">
+        <ion-icon name="heart-outline"></ion-icon>
+        <ion-icon name="leaf-outline"></ion-icon>
+      </div>
+    </div>
+  </div>
+</ion-content>
