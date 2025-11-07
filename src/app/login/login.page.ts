@@ -1,9 +1,8 @@
 import { Component, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import {
+  
   IonContent,
-  IonHeader,
-  IonTitle,
-  IonToolbar,
   IonButton,
   IonInput,
   IonItem,
@@ -23,15 +22,13 @@ import {
   standalone: true,
   selector: 'app-login',
   imports: [
+    CommonModule,
     IonContent,
-    IonHeader,
-    IonTitle,
-    IonToolbar,
     IonButton,
     IonInput,
     IonItem,
     IonImg,
-    FormsModule, // ✅ Permite [(ngModel)]
+    FormsModule, 
   ],
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],

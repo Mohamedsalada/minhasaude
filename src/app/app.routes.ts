@@ -30,7 +30,7 @@ export const routes: Routes = [
     redirectTo: 'login',
     pathMatch: 'full',
   },
-  // Rota curinga (opcional) para páginas não encontradas
+ 
  {
     path: 'sobrenos',
     loadComponent: () => import('./sobrenos/sobrenos.page').then((m) => m.SobrenosPage),
@@ -40,6 +40,11 @@ export const routes: Routes = [
     path: 'login',
     loadComponent: () => import('./login/login.page').then((m) => m.LoginPage),
   },
+  {
+    path: 'api',
+    loadComponent: () => import('./api/api.page').then( m => m.ApiPage)
+  },
+
 ];
 
 @NgModule({

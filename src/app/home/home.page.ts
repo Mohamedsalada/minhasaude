@@ -179,15 +179,17 @@ export class HomePage implements OnInit, AfterViewInit {
     this.router.navigate(['/settings']);
   }
 
-  // ✅ NOVO MÉTODO PARA SOBRE
-  goToSobrenos() {
-    this.router.navigate(['/sobrenos']); // ajuste a rota se necessário
+  
+  goToApi() {
+    this.router.navigate(['/api']); // ajuste a rota se necessário
   }
   
 
-  // ✅ Método para Cardápio (já existente)
+  
   goToCardapio() {
     this.router.navigate(['/refeicao']); 
   }
 }
+
+
 
