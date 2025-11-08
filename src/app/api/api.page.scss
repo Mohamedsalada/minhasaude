@@ -150,12 +150,3 @@ ion-searchbar {
     }
 }
 
-ion-content {
-    /* Define a rolagem como automática. 'scroll' também funciona. */
-    --overflow: auto !important; 
-    
-    /* Esta regra é raramente necessária, mas garante que nada está escondendo o scroll */
-    .inner-scroll {
-        overflow: scroll !important;
-    }
-}

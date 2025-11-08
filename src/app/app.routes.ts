@@ -1,6 +1,4 @@
-// src/app/app-routing.module.ts
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
@@ -23,20 +21,11 @@ export const routes: Routes = [
     path: 'cadastro',
     loadComponent: () => import('./cadastro/cadastro.page').then((m) => m.CadastroPage),
   },
- 
-  // Rota raiz sempre redireciona para cadastro
   {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full',
-  },
- 
- {
     path: 'sobrenos',
     loadComponent: () => import('./sobrenos/sobrenos.page').then((m) => m.SobrenosPage),
-    
   },
-   {
+  {
     path: 'login',
     loadComponent: () => import('./login/login.page').then((m) => m.LoginPage),
   },
@@ -44,11 +33,14 @@ export const routes: Routes = [
     path: 'api',
     loadComponent: () => import('./api/api.page').then( m => m.ApiPage)
   },
-
+  {
+    path: 'reset-password',
+    loadComponent: () => import('./reset-password/reset-password.page').then( m => m.ResetPasswordPage)
+  },
+  // Rota raiz sempre redireciona para login
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full',
+  },
 ];
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
-})
-export class AppRoutingModule {}

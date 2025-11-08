@@ -3,15 +3,15 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { finalize } from 'rxjs/operators';
 import { addIcons } from 'ionicons';
-// Ícones usados no HTML
+
 import { add, restaurantOutline } from 'ionicons/icons'; 
 import { Router } from '@angular/router';
 
-// Injeção de dependência para o serviço
+
 import { NutricaoService, ItemAlimento } from '../services/nutricao'; 
 
 import {
-  // === TODOS OS IMPORTS DE COMPONENTES IONIC USADOS NO TEMPLATE ===
+ 
   IonHeader, 
   IonToolbar, 
   IonTitle,
@@ -34,7 +34,7 @@ import {
     CommonModule,
     FormsModule, 
 
-    // COMPONENTES IONIC USADOS NO TEMPLATE:
+   
     IonHeader,
     IonToolbar,
     IonTitle,
@@ -55,20 +55,18 @@ export class ApiPage implements OnInit {
   public errorMessage: string | null = null;
   public termoBusca: string = '';
 
-  // 🛠️ Conserto 1: Adicionar o CONSTRUCTOR para injetar dependências
+  
   constructor(
-    // Injeção do Router (se for usar) e do NutricaoService
+    
     private nutricaoService: NutricaoService, 
-    private router: Router // O Router foi importado, mas não usado
+    private router: Router 
   ) {
-    // Inicializa os ícones globalmente, como recomendado pelo Ionic
     addIcons({ add, restaurantOutline });
   }
 
-  // 🛠️ Conserto 2: Implementar o ngOnInit, que é a interface que a classe declara
   ngOnInit() {
-    // Ponto ideal para inicialização, se necessário.
-    // Você pode remover o ngOnInit se não usá-lo, mas é boa prática tê-lo se você o declarou.
+    
+    
   }
 
   carregarAlimentos(termo?: string) {
@@ -85,7 +83,7 @@ export class ApiPage implements OnInit {
     this.isLoading = true;
     this.errorMessage = null;
 
-    // 🛠️ Conserto 3: Usar a variável injetada (nutricaoService)
+    
     this.nutricaoService.buscarAlimentos(this.termoBusca) 
       .pipe(finalize(() => this.isLoading = false))
       .subscribe({

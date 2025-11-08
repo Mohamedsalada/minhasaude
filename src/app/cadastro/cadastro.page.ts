@@ -1,4 +1,4 @@
-// src/app/cadastro/cadastro.page.ts
+
 import { Component, OnInit, ViewChild, ElementRef, inject, NgZone } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -59,7 +59,7 @@ export class CadastroPage {
 
     try {
       await createUserWithEmailAndPassword(this.auth, email, password);
-      await this.router.navigateByUrl('/home'); // já entra autenticado
+      await this.router.navigateByUrl('/home'); 
     } catch (e: any) {
       this.error = e?.code ?? 'Falha ao cadastrar';
     }

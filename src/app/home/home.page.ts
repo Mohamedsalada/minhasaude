@@ -29,12 +29,14 @@ import {
   trendingUpOutline,
   settingsOutline,
   waterOutline,
+  person, // Para o ícone de perfil
+  scaleOutline, // Para o ícone do IMC
 } from 'ionicons/icons';
 
 // 🔹 Firebase imports
 import { Auth, onAuthStateChanged, User } from '@angular/fire/auth';
 import { Firestore, doc, getDoc } from '@angular/fire/firestore';
-import { CommonModule } from '@angular/common'; // IMPORTANTE para *ngIf
+import { CommonModule } from '@angular/common'; // Necessário para *ngIf
 
 addIcons({
   barbellOutline,
@@ -45,6 +47,8 @@ addIcons({
   trendingUpOutline,
   settingsOutline,
   waterOutline,
+  person,
+  scaleOutline,
 });
 
 @Component({
@@ -62,13 +66,16 @@ addIcons({
     IonTabButton,
     IonToolbar,
     IonFooter,
-    CommonModule, // 🔹 Necessário para *ngIf no template
+    CommonModule,
   ],
 })
 export class HomePage implements OnInit, AfterViewInit {
+  // ✅ Injeções de dependências:
   private auth = inject(Auth);
   private firestore = inject(Firestore);
+  private router = inject(Router); // Router injetado corretamente
 
+  // 🔹 Propriedades
   userName = 'Usuário';
   imc = 22.5;
   imcStatus = 'Normal';
@@ -79,15 +86,18 @@ export class HomePage implements OnInit, AfterViewInit {
   proteinCurrent = 70;
   proteinGoal = 100;
 
+  // @ViewChild não está sendo usado no template atual, mas mantido.
   @ViewChild('waterBar', { static: false }) waterBar!: ElementRef<HTMLDivElement>;
 
   isInitialized = false;
 
-  constructor(private router: Router, private ngZone: NgZone) {}
+  // 🔹 Construtor: ngZone é usado para forçar a detecção de mudanças em eventos fora do Angular
+  constructor(private ngZone: NgZone) {} 
 
   ngOnInit() {
     const user = this.auth.currentUser;
 
+    // TODO: Usar onAuthStateChanged para garantir que a autenticação esteja completa
     if (user) {
       this.loadUserName(user.uid, user.email);
     } 
@@ -112,6 +122,9 @@ export class HomePage implements OnInit, AfterViewInit {
     this.isInitialized = true;
   }
 
+  // --- MÉTODOS DE ÁGUA ---
+
+  // Este método não é chamado no HTML, mas mantido por segurança.
   onWaterBarClick(event: MouseEvent) {
     if (!this.isInitialized) return;
 
@@ -129,6 +142,7 @@ export class HomePage implements OnInit, AfterViewInit {
     });
   }
 
+  // ✅ Método decrementWater (requerido pelo HTML)
   decrementWater() {
     if (!this.isInitialized) return;
     if (this.waterCurrent > 0) {
@@ -137,6 +151,7 @@ export class HomePage implements OnInit, AfterViewInit {
     }
   }
 
+  // ✅ Método incrementWater (requerido pelo HTML)
   incrementWater() {
     if (!this.isInitialized) return;
     if (this.waterCurrent < this.waterGoal) {
@@ -145,24 +160,32 @@ export class HomePage implements OnInit, AfterViewInit {
     }
   }
 
+  // ✅ Getter waterPercentage (requerido pelo HTML)
   get waterPercentage() {
     return (this.waterCurrent / this.waterGoal) * 100;
   }
 
+  // --- MÉTODOS DE PROTEÍNAS ---
+
+  // ✅ Método decrementProtein (requerido pelo HTML)
   decrementProtein() {
     if (!this.isInitialized) return;
     if (this.proteinCurrent > 0) this.proteinCurrent -= 1;
   }
 
+  // ✅ Método incrementProtein (requerido pelo HTML)
   incrementProtein() {
     if (!this.isInitialized) return;
     if (this.proteinCurrent < this.proteinGoal) this.proteinCurrent += 1;
   }
 
+  // ✅ Getter proteinPercentage (requerido pelo HTML)
   get proteinPercentage() {
     return (this.proteinCurrent / this.proteinGoal) * 100;
   }
 
+  
+  
   goToHome() {
     this.router.navigate(['/home']);
   }
@@ -181,15 +204,10 @@ export class HomePage implements OnInit, AfterViewInit {
 
   
   goToApi() {
-    this.router.navigate(['/api']); // ajuste a rota se necessário
+    this.router.navigate(['/api']); 
   }
-  
-
   
   goToCardapio() {
     this.router.navigate(['/refeicao']); 
   }
 }
-
-
-

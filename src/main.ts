@@ -3,9 +3,11 @@ import { provideRouter, withPreloading, PreloadAllModules } from '@angular/route
 import { RouteReuseStrategy } from '@angular/router';
 import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular/standalone';
 import { AppComponent } from './app/app.component';
-import { HttpClientModule } from '@angular/common/http';
 
 import { routes } from './app/app.routes';
+
+// ✅ CORREÇÃO CRÍTICA: Importar o provedor de função correto para serviços HTTP
+import { provideHttpClient } from '@angular/common/http'; 
 
 // 🔥 Firebase
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
@@ -35,12 +37,13 @@ bootstrapApplication(AppComponent, {
     // Fornece roteamento com preload de módulos
     provideRouter(routes, withPreloading(PreloadAllModules)),
 
+    // 🎯 HABILITA CHAMADAS HTTP GLOBALMENTE
+    provideHttpClient(), 
+
     // 🔥 Inicialização do Firebase + Auth + Firestore
     provideFirebaseApp(() => initializeApp(firebaseConfig)),
     provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore()), // ✅ ADICIONADO para Firestore
+    provideFirestore(() => getFirestore()), 
   ],
 })
 .catch(err => console.error(err));
-
-
