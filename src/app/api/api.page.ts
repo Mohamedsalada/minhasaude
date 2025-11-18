@@ -57,11 +57,16 @@ export class ApiPage implements OnInit {
 
   
   constructor(
-    
     private nutricaoService: NutricaoService, 
     private router: Router 
   ) {
     addIcons({ add, restaurantOutline });
+    }
+    
+    goTodieta() {
+      this.router.navigate(['/dietas']);
+
+    
   }
 
   ngOnInit() {

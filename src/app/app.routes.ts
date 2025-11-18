@@ -11,7 +11,7 @@ export const routes: Routes = [
   },
   {
     path: 'dietas',
-    loadComponent: () => import('./dietas/dietas.page').then((m) => m.DietasPage),
+    loadComponent: () => import('./dietas/dietas.page').then((m) => m.DietaPage),
   },
   {
     path: 'perfil',
