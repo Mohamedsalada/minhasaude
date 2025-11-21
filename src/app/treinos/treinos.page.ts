@@ -88,7 +88,7 @@ export class TreinosPage {
   }
 
   goToProgresso() {
-    this.router.navigate(['/progress']);
+    this.router.navigate(['/progresso']);
   }
 
   goToConfiguracoes() {

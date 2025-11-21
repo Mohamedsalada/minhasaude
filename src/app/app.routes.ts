@@ -54,5 +54,9 @@ export const routes: Routes = [
     path: 'avancado',
     loadComponent: () => import('./avancado/avancado.page').then( m => m.AvancadoPage)
   },
+  {
+    path: 'progresso',
+    loadComponent: () => import('./progresso/progresso.page').then( m => m.ProgressoPage)
+  },
 
 ];

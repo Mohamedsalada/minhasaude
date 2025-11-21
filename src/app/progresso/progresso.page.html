@@ -1,0 +1,54 @@
+<ion-header>
+  <!-- Toolbar com cor primária e botão de Home -->
+  <ion-toolbar color="primary"> 
+    
+    <ion-title>Progresso</ion-title>
+
+    <ion-buttons slot="end">
+      <!-- Botão com cor clara para contraste -->
+      <ion-button (click)="goToHome()" color="light"> 
+        <ion-icon slot="icon-only" name="home"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <!-- Botão para acionar a câmera -->
+  <ion-button expand="full" (click)="tirarFoto()">
+    Tirar Foto do Progresso
+  </ion-button>
+
+  <!-- CORREÇÃO: Usar a diretiva *ngIf do Angular. A sintaxe correta é *ngIf="foto()" -->
+  <div style="margin-top: 20px;" *ngIf="foto()">
+    <img [src]="foto()!" style="width: 100%; border-radius: 12px;" />
+  </div>
+
+</ion-content>
+
+<!-- RODAPÉ: Estrutura correta para a Tab Bar, sem ion-toolbar ou ion-tabs aninhados -->
+<ion-footer>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home" (click)="goToHome()">
+      <ion-icon name="home-outline"></ion-icon>
+      <ion-label>Início</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="treinos" (click)="goToTreinos()">
+      <ion-icon name="barbell-outline"></ion-icon>
+      <ion-label>Treinos</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="progress" (click)="goToProgresso()">
+      <ion-icon name="trending-up-outline"></ion-icon>
+      <ion-label>Progresso</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="settings" (click)="goToConfiguracoes()">
+      <ion-icon name="settings-outline"></ion-icon>
+      <ion-label>Configurações</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>

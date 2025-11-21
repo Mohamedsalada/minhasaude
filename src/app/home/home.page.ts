@@ -195,7 +195,7 @@ export class HomePage implements OnInit, AfterViewInit {
   }
 
   goToProgresso() {
-    this.router.navigate(['/progress']);
+    this.router.navigate(['/progresso']);
   }
 
   goToConfiguracoes() {
