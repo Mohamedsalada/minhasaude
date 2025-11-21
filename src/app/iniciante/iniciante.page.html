@@ -1,0 +1,205 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Treino Iniciante</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <h1 class="title">Dias de treino</h1>
+
+  <ion-accordion-group expand="compact">
+
+    <!-- DIA 1 - PEITO + TRÍCEPS -->
+    <ion-accordion value="dia1">
+      <ion-item slot="header">
+        <ion-label>Dia 1 • Peito + Tríceps</ion-label>
+      </ion-item>
+
+      <div class="accordion-content" slot="content">
+
+        <div class="exercise-card">
+          <img src="assets/exercicios/supino-reto.png" alt="Supino reto">
+          <p>Supino reto – 3x12</p>
+        </div>
+
+        <div class="exercise-card">
+          <img src="assets/exercicios/supino-inclinado.png" alt="Supino inclinado">
+          <p>Supino inclinado – 3x12</p>
+        </div>
+
+        <div class="exercise-card">
+          <img src="assets/exercicios/crucifixo.png" alt="Crucifixo máquina">
+          <p>Crucifixo máquina – 3x15</p>
+        </div>
+
+        <div class="exercise-card">
+          <img src="assets/exercicios/triceps-pulley.png" alt="Tríceps pulley">
+          <p>Tríceps pulley – 3x12</p>
+        </div>
+
+        <div class="exercise-card">
+          <img src="assets/exercicios/triceps-testa.png" alt="Tríceps testa">
+          <p>Tríceps testa – 2x12</p>
+        </div>
+
+      </div>
+    </ion-accordion>
+
+
+    <!-- DIA 2 - COSTAS + BÍCEPS -->
+    <ion-accordion value="dia2">
+      <ion-item slot="header">
+        <ion-label>Dia 2 • Costas + Bíceps</ion-label>
+      </ion-item>
+
+      <div class="accordion-content" slot="content">
+
+        <div class="exercise-card">
+          <img src="assets/exercicios/remada-baixa.png" alt="Remada baixa">
+          <p>Remada baixa – 3x12</p>
+        </div>
+
+        <div class="exercise-card">
+          <img src="assets/exercicios/puxada-frente.png" alt="Puxada na frente">
+          <p>Puxada na frente – 3x12</p>
+        </div>
+
+        <div class="exercise-card">
+          <img src="assets/exercicios/remada-unilateral.png" alt="Remada unilateral">
+          <p>Remada unilateral – 3x10</p>
+        </div>
+
+        <div class="exercise-card">
+          <img src="assets/exercicios/rosca-direta.png" alt="Rosca direta">
+          <p>Rosca direta – 3x12</p>
+        </div>
+
+        <div class="exercise-card">
+          <img src="assets/exercicios/rosca-alternada.png" alt="Rosca alternada">
+          <p>Rosca alternada – 2x12</p>
+        </div>
+
+      </div>
+    </ion-accordion>
+
+
+    <!-- DIA 3 - PERNAS + GLÚTEO -->
+    <ion-accordion value="dia3">
+      <ion-item slot="header">
+        <ion-label>Dia 3 • Pernas + Glúteo</ion-label>
+      </ion-item>
+
+      <div class="accordion-content" slot="content">
+
+        <div class="exercise-card">
+          <img src="assets/exercicios/agachamento.png" alt="Agachamento">
+          <p>Agachamento – 3x12</p>
+        </div>
+
+        <div class="exercise-card">
+          <img src="assets/exercicios/leg-press.png" alt="Leg press">
+          <p>Leg press – 3x12</p>
+        </div>
+
+        <div class="exercise-card">
+          <img src="assets/exercicios/extensora.png" alt="Cadeira extensora">
+          <p>Cadeira extensora – 3x15</p>
+        </div>
+
+        <div class="exercise-card">
+          <img src="assets/exercicios/flexora.png" alt="Mesa flexora">
+          <p>Mesa flexora – 3x12</p>
+        </div>
+
+        <div class="exercise-card">
+          <img src="assets/exercicios/elevacao-pelvica.png" alt="Elevação pélvica">
+          <p>Elevação pélvica – 3x12</p>
+        </div>
+
+      </div>
+    </ion-accordion>
+
+
+    <!-- DIA 4 - OMBRO + ABDÔMEN -->
+    <ion-accordion value="dia4">
+      <ion-item slot="header">
+        <ion-label>Dia 4 • Ombro + Abdômen</ion-label>
+      </ion-item>
+
+      <div class="accordion-content" slot="content">
+
+        <div class="exercise-card">
+          <img src="assets/exercicios/elevacao-lateral.png" alt="Elevação lateral">
+          <p>Elevação lateral – 3x12</p>
+        </div>
+
+        <div class="exercise-card">
+          <img src="assets/exercicios/desenvolvimento.png" alt="Desenvolvimento">
+          <p>Desenvolvimento com halteres – 3x12</p>
+        </div>
+
+        <div class="exercise-card">
+          <img src="assets/exercicios/elevacao-frontal.png" alt="Elevação frontal">
+          <p>Elevação frontal – 3x12</p>
+        </div>
+
+        <div class="exercise-card">
+          <img src="assets/exercicios/prancha.png" alt="Prancha">
+          <p>Prancha – 3x30s</p>
+        </div>
+
+        <div class="exercise-card">
+          <img src="assets/exercicios/abdominal.png" alt="Abdominal crunch">
+          <p>Abdominal crunch – 3x20</p>
+        </div>
+
+      </div>
+    </ion-accordion>
+
+
+    <!-- DIA 5 - FULL BODY -->
+    <ion-accordion value="dia5">
+      <ion-item slot="header">
+        <ion-label>Dia 5 • Corpo todo</ion-label>
+      </ion-item>
+
+      <div class="accordion-content" slot="content">
+
+        <div class="exercise-card">
+          <img src="assets/exercicios/agachamento.png" alt="Agachamento">
+          <p>Agachamento – 3x12</p>
+        </div>
+
+        <div class="exercise-card">
+          <img src="assets/exercicios/remada-baixa.png" alt="Remada sentada">
+          <p>Remada sentada – 3x12</p>
+        </div>
+
+        <div class="exercise-card">
+          <img src="assets/exercicios/supino-reto.png" alt="Supino reto">
+          <p>Supino reto – 3x12</p>
+        </div>
+
+        <div class="exercise-card">
+          <img src="assets/exercicios/rosca-direta.png" alt="Rosca direta">
+          <p>Rosca direta – 2x12</p>
+        </div>
+
+        <div class="exercise-card">
+          <img src="assets/exercicios/flexao.png" alt="Flexão de braço">
+          <p>Flexão – 2x10</p>
+        </div>
+
+      </div>
+    </ion-accordion>
+
+  </ion-accordion-group>
+
+</ion-content>

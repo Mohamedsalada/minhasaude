@@ -42,5 +42,17 @@ export const routes: Routes = [
     path: '',
     redirectTo: 'login',
     pathMatch: 'full',
+  },  {
+    path: 'iniciante',
+    loadComponent: () => import('./iniciante/iniciante.page').then( m => m.IniciantePage)
   },
+  {
+    path: 'intermediario',
+    loadComponent: () => import('./intermediario/intermediario.page').then( m => m.IntermediarioPage)
+  },
+  {
+    path: 'avancado',
+    loadComponent: () => import('./avancado/avancado.page').then( m => m.AvancadoPage)
+  },
+
 ];

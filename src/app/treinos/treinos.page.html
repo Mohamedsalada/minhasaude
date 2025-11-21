@@ -8,10 +8,10 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <!-- Recomendação -->
-  <p class="recommendation">Recomendado para Mesomorfo</p>
+ 
+  <p class="recommendation">treinos</p>
 
-  <!-- Treinamento de Força -->
+  <!-- INICIANTE -->
   <ion-card class="workout-card">
     <ion-card-content>
       <ion-grid>
@@ -20,19 +20,18 @@
             <ion-icon name="barbell-outline" class="workout-icon"></ion-icon>
           </ion-col>
           <ion-col size="6">
-            <ion-card-title class="workout-title">Treinamento de Força</ion-card-title>
-            <p class="workout-info">45 min</p>
-            <p class="workout-info">Intermediário</p>
+            <ion-card-title class="workout-title">Treinos para Iniciante</ion-card-title>
+            <p class="workout-info">1h</p>
           </ion-col>
           <ion-col size="4" class="ion-text-end">
-            <ion-button shape="round" class="start-button">Começar</ion-button>
+            <ion-button shape="round" class="start-button" (click)="goToIniciante()">ir</ion-button>
           </ion-col>
         </ion-row>
       </ion-grid>
     </ion-card-content>
   </ion-card>
 
-  <!-- Cardio HIIT -->
+  <!-- INTERMEDIÁRIO -->
   <ion-card class="workout-card">
     <ion-card-content>
       <ion-grid>
@@ -41,19 +40,18 @@
             <ion-icon name="heart" class="workout-icon"></ion-icon>
           </ion-col>
           <ion-col size="6">
-            <ion-card-title class="workout-title">Cardio HIIT</ion-card-title>
-            <p class="workout-info">30 min</p>
-            <p class="workout-info">Avançado</p>
+            <ion-card-title class="workout-title">treinos para intermediario</ion-card-title>
+            <p class="workout-info">1h</p>
           </ion-col>
           <ion-col size="4" class="ion-text-end">
-            <ion-button shape="round" class="start-button">Começar</ion-button>
+            <ion-button shape="round" class="start-button" (click)="goToIntermediario()">ir</ion-button>
           </ion-col>
         </ion-row>
       </ion-grid>
     </ion-card-content>
   </ion-card>
 
-  <!-- Treinamento Funcional -->
+  <!-- AVANÇADO -->
   <ion-card class="workout-card">
     <ion-card-content>
       <ion-grid>
@@ -62,12 +60,11 @@
             <ion-icon name="walk-outline" class="workout-icon"></ion-icon>
           </ion-col>
           <ion-col size="6">
-            <ion-card-title class="workout-title">Treinamento Funcional</ion-card-title>
-            <p class="workout-info">40 min</p>
-            <p class="workout-info">Iniciante</p>
+            <ion-card-title class="workout-title">treinos para avançado</ion-card-title>
+            <p class="workout-info">1hr e 30 min</p>
           </ion-col>
           <ion-col size="4" class="ion-text-end">
-            <ion-button shape="round" class="start-button">Começar</ion-button>
+            <ion-button shape="round" class="start-button" (click)="goToAvancado()">ir</ion-button>
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -86,29 +83,27 @@
   <ion-toolbar>
     <ion-tabs>
       <ion-tab-bar slot="bottom">
-        <!-- Aba Início -->
+
         <ion-tab-button tab="home" (click)="goToHome()">
           <ion-icon name="home-outline"></ion-icon>
           <ion-label>Início</ion-label>
         </ion-tab-button>
 
-        <!-- Aba Treinos -->
         <ion-tab-button tab="treinos" (click)="goToTreinos()">
           <ion-icon name="barbell-outline"></ion-icon>
           <ion-label>Treinos</ion-label>
         </ion-tab-button>
 
-        <!-- Aba Progresso -->
         <ion-tab-button tab="progress" (click)="goToProgresso()">
           <ion-icon name="trending-up-outline"></ion-icon>
           <ion-label>Progresso</ion-label>
         </ion-tab-button>
 
-        <!-- Aba Configurações -->
         <ion-tab-button tab="settings" (click)="goToConfiguracoes()">
           <ion-icon name="settings-outline"></ion-icon>
           <ion-label>Configurações</ion-label>
         </ion-tab-button>
+
       </ion-tab-bar>
     </ion-tabs>
   </ion-toolbar>

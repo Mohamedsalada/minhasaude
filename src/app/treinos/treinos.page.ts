@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router'; // 👈 Importar o Router para navegação
+import { Router } from '@angular/router';
 import {
   IonHeader,
   IonToolbar,
@@ -74,8 +74,11 @@ addIcons({
 })
 export class TreinosPage {
 
-  constructor(private router: Router) {} // 👈 injetando o Router no construtor
+  constructor(private router: Router) {}
 
+  // -------------------------
+  // 🟩 BOTÕES DO MENU INFERIOR
+  // -------------------------
   goToHome() {
     this.router.navigate(['/home']);
   }
@@ -90,5 +93,20 @@ export class TreinosPage {
 
   goToConfiguracoes() {
     this.router.navigate(['/settings']);
+  }
+
+  // -------------------------
+  // 🟦 BOTÕES "ir" DOS TREINOS
+  // -------------------------
+  goToIniciante() {
+    this.router.navigate(['/iniciante']);
+  }
+
+  goToIntermediario() {
+    this.router.navigate(['/intermediario']);
+  }
+
+  goToAvancado() {
+    this.router.navigate(['/avancado']);
   }
 }
