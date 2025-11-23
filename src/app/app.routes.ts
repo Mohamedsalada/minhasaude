@@ -42,7 +42,8 @@ export const routes: Routes = [
     path: '',
     redirectTo: 'login',
     pathMatch: 'full',
-  },  {
+  },
+  {
     path: 'iniciante',
     loadComponent: () => import('./iniciante/iniciante.page').then( m => m.IniciantePage)
   },
@@ -57,6 +58,10 @@ export const routes: Routes = [
   {
     path: 'progresso',
     loadComponent: () => import('./progresso/progresso.page').then( m => m.ProgressoPage)
+  },
+  {
+    path: 'configuracoes',
+    loadComponent: () => import('./configuracoes/configuracoes.page').then( m => m.ConfiguracoesPage)
   },
 
 ];

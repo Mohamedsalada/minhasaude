@@ -1,6 +1,6 @@
 <ion-header>
   <!-- Toolbar com cor primária e botão de Home -->
-  <ion-toolbar color="primary"> 
+  <ion-toolbar > 
     
     <ion-title>Progresso</ion-title>
 
@@ -22,7 +22,7 @@
   </ion-button>
 
   <!-- CORREÇÃO: Usar a diretiva *ngIf do Angular. A sintaxe correta é *ngIf="foto()" -->
-  <div style="margin-top: 20px;" *ngIf="foto()">
+  <div style="margin-top: 20px;" if="foto()">
     <img [src]="foto()!" style="width: 100%; border-radius: 12px;" />
   </div>
 

@@ -19,3 +19,9 @@
   font-weight: 600;
   margin: 0;
 }
+ion-header ion-toolbar {
+  /* Fundo azul vibrante para a barra de ferramentas (o "container preto" que você mencionou) */
+  --background: #007aff;
+  /* Define a cor do conteúdo (títulos, botões/ícones) dentro da barra de ferramentas para branco */
+  --color: #fff; 
+}

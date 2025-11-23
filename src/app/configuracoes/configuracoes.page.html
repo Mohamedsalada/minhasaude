@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+     <ion-button (click)="goBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+      <ion-title>Configurações</ion-title>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <!-- Cabeçalho condensado (efeito scroll grande) -->
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Configurações</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <p class="ion-text-medium ion-padding-bottom">
+    Gerencie suas opções de conta e dados do aplicativo.
+  </p>
+     
+  <!-- Botão de Logout -->
+  <ion-button 
+    (click)="logout()" 
+    expand="block" 
+    color="danger" 
+    class="ion-margin-top"
+  >
+    <!-- Ícone de sair da conta -->
+    <ion-icon slot="start" name="log-out-outline"></ion-icon>
+    Sair da Conta (Logout)
+  </ion-button>
+  
+  <!-- Outros itens de configuração podem ser adicionados aqui, como ion-item para: -->
+  <!-- <ion-item button>
+    <ion-label>Editar Perfil</ion-label>
+  </ion-item>
+  <ion-item button>
+    <ion-label>Política de Privacidade</ion-label>
+  </ion-item> -->
+
+</ion-content>

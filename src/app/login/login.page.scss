@@ -31,7 +31,7 @@
   --background: white; 
   --inner-border-width: 0;
   --border-width: 1px; 
-  --border-color: #ccc;
+  --border-color: #000000;
   --border-radius: 12px; 
   
   color: #555; 
@@ -88,4 +88,13 @@
   height: 50px;
   font-weight: bold;
   text-transform: uppercase;
+}
+/* NOVO ESTILO: Mensagem de Erro em Vermelho */
+.error-message {
+  color: #ff3b30; /* Vermelho vibrante, comum para erros */
+  font-size: 0.9em;
+  font-weight: 500;
+  margin-top: -5px; /* Ajusta o espaçamento acima dos inputs */
+  margin-bottom: 15px; /* Adiciona espaço abaixo da mensagem */
+  text-align: center;
 }

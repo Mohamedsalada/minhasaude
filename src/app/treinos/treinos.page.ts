@@ -92,7 +92,7 @@ export class TreinosPage {
   }
 
   goToConfiguracoes() {
-    this.router.navigate(['/settings']);
+    this.router.navigate(['/configuracoes']);
   }
 
   // -------------------------

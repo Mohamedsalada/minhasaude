@@ -94,7 +94,7 @@ export class ProgressoPage {
   }
 
   goToConfiguracoes() {
-    this.router.navigate(['/settings']); 
+    this.router.navigate(['/configuracoes']);
   }
   
   goToApi() {

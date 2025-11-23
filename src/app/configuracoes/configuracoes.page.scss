@@ -1,0 +1,66 @@
+/* Este arquivo deve ser salvo como src/app/configuracoes/configuracoes.page.scss */
+
+/* 1. Define o fundo do conteúdo da página (a área que rola) como branco */
+ion-content {
+  --background: white;
+
+  /* Estilo para o texto de descrição */
+  p.ion-text-medium {
+    color: #555; /* Cor de texto mais suave */
+    font-size: 1.05em;
+  }
+  
+  /* Estilo para o botão de Logout (Perigo) */
+  ion-button[color="danger"] {
+    /* Adiciona uma sombra sutil para destacar o botão de ação principal */
+    --box-shadow: 0 4px 10px rgba(255, 59, 92, 0.3);
+    font-weight: 600;
+  }
+}
+
+/* 2. Estilos do Rodapé (Tab Bar) - Repetição do Progresso para consistência visual */
+
+ion-tab-bar {
+  /* Fundo branco e uma linha de borda sutil no topo */
+  --background: #fff;
+  border-top: 1px solid #ddd;
+}
+
+ion-tab-button {
+  /* Cor dos ícones e labels padrão (cinza) */
+  --color: #888;
+  /* Cor dos ícones e labels selecionados (um azul vibrante, como no iOS padrão) */
+  --color-selected: #007aff;
+  
+  /* Garante uma boa área de toque */
+  padding: 5px 0;
+}
+
+ion-tab-button ion-icon {
+  font-size: 1.4em;
+}
+
+ion-tab-button ion-label {
+  font-size: 0.75em;
+}
+
+/* 3. Estilo para o CABEÇALHO e TÍTULOS. Definindo o fundo da toolbar como azul e o texto como branco. */
+
+ion-header ion-toolbar {
+  /* Fundo azul vibrante para a barra de ferramentas (o "container preto" que você mencionou) */
+  --background: #007aff;
+  /* Define a cor do conteúdo (títulos, botões/ícones) dentro da barra de ferramentas para branco */
+  --color: #fff; 
+}
+
+/* Título Grande (Condensado) */
+ion-header[collapse="condense"] ion-toolbar:first-of-type ion-title {
+  color: #fff; /* Cor do texto do título grande: Branco */
+  font-weight: 700;
+}
+
+/* Título Pequeno (Padrão, no topo) */
+ion-header:not([collapse="condense"]) ion-toolbar ion-title {
+  color: #fff; /* Cor do texto do título pequeno: Branco */
+  font-weight: 600;
+}
