@@ -28,7 +28,6 @@ import {
     IonInput,
     IonItem,
     IonImg,
-    IonLabel,
     FormsModule,
   ],
   templateUrl: './login.page.html',
@@ -67,7 +66,7 @@ export class LoginPage {
           this.error = 'Email inválido.';
           break;
         default:
-          this.error = 'Falha ao autenticar. Verifique suas credenciais.';
+          this.error = 'Login ou senha inválido.';
       }
     }
   }

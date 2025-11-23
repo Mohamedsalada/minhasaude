@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+     <ion-button (click)="goBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+      <ion-title>Configurações</ion-title>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Configurações</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <p class="ion-text-medium ion-padding-bottom">
+    Gerencie suas opções de conta e dados do aplicativo.
+  </p>
+     
+  <ion-button 
+    (click)="logout()" 
+    expand="block" 
+    color="danger" 
+    class="ion-margin-top"
+  >
+    <ion-icon slot="start" name="log-out-outline"></ion-icon>
+    Sair da Conta (Logout)
+  </ion-button>
+  
+  
+
+</ion-content>

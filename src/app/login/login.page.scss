@@ -31,7 +31,7 @@
   --background: white; 
   --inner-border-width: 0;
   --border-width: 1px; 
-  --border-color: #ccc;
+  --border-color: #000000;
   --border-radius: 12px; 
   
   color: #555; 
@@ -88,4 +88,12 @@
   height: 50px;
   font-weight: bold;
   text-transform: uppercase;
+}
+.error-message {
+  color: #ff3b30; 
+  font-size: 0.9em;
+  font-weight: 500;
+  margin-top: -5px; 
+  margin-bottom: 15px; 
+  text-align: center;
 }

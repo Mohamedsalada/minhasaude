@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router'; // <<-- PASSO 2: Importar o Router
+import { Router } from '@angular/router'; 
 import { addIcons } from 'ionicons';
-import { restaurantOutline } from 'ionicons/icons'; // <<-- Adicionar ícone
+import { restaurantOutline } from 'ionicons/icons'; 
 import { Firestore, collection, collectionData, addDoc, doc, updateDoc, deleteDoc } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
-// PASSO 4: Importar os componentes Ionic que a página usa
 import { 
   IonHeader, IonToolbar, IonTitle, IonContent, IonButton, 
   IonButtons, IonIcon, IonItem, IonLabel, IonInput, 
@@ -26,11 +25,9 @@ interface Dieta {
 @Component({
   selector: 'app-dieta',
   standalone: true,
-  // PASSO 4: Usar os componentes individuais (substituindo IonicModule)
   imports: [
     CommonModule, 
     ReactiveFormsModule,
-    // Componentes para o template:
     IonHeader, IonToolbar, IonTitle, IonContent, IonButton, 
     IonButtons, IonIcon, IonItem, IonLabel, IonInput, 
     IonList, IonListHeader, IonNote, IonItemSliding, 
@@ -54,9 +51,8 @@ export class DietaPage implements OnInit {
 
   private collectionPath = 'dietas';
 
-  // PASSO 2: Injetar o Router no construtor
   constructor(private fb: FormBuilder, private firestore: Firestore, private router: Router) {
-    addIcons({ restaurantOutline }); // Adicionar o ícone
+    addIcons({ restaurantOutline }); 
   }
 
   ngOnInit() {
@@ -64,12 +60,10 @@ export class DietaPage implements OnInit {
     this.dietas$ = collectionData(col, { idField: 'id' }) as Observable<Dieta[]>;
   }
   
-  // PASSO 3: Criar a função de navegação
   goToHome() {
-    this.router.navigate(['/home']); // Navega para a rota 'api'
+    this.router.navigate(['/home']); 
   }
 
-  // Salvar ou atualizar dieta
   async salvar() {
     if (this.form.invalid) {
       this.form.markAllAsTouched();
@@ -98,7 +92,6 @@ export class DietaPage implements OnInit {
       this.resetForm();
     } catch (e) {
       console.error('Erro ao salvar dieta:', e);
-      // alert('Erro ao salvar dieta. Veja o console.'); // Removido alert()
     } finally {
       this.saving = false;
     }
@@ -113,16 +106,13 @@ export class DietaPage implements OnInit {
     });
   }
 
-  // Excluir uma dieta (corrigido: removida a função confirm())
   async apagar(d: Dieta) {
-    // Aqui deveria haver um modal customizado para confirmação, mas usamos console.log para seguir a regra
     console.log(`Excluindo dieta: "${d.titulo}"`);
     try {
       const ref = doc(this.firestore, `${this.collectionPath}/${d.id}`);
       await deleteDoc(ref);
     } catch (e) {
       console.error('Erro ao deletar dieta:', e);
-      // alert('Erro ao deletar dieta. Veja o console.'); // Removido alert()
     }
   }
 

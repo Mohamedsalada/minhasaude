@@ -73,10 +73,12 @@ export class HomePage implements OnInit, AfterViewInit {
   // ✅ Injeções de dependências:
   private auth = inject(Auth);
   private firestore = inject(Firestore);
-  private router = inject(Router); // Router injetado corretamente
+  private router = inject(Router);
 
   // 🔹 Propriedades
-  userName = 'Usuário';
+  // Definindo 'Usuário' como valor padrão para evitar a saudação vazia
+  userName = 'Usuário'; 
+  
   imc = 22.5;
   imcStatus = 'Normal';
 
@@ -86,34 +88,53 @@ export class HomePage implements OnInit, AfterViewInit {
   proteinCurrent = 70;
   proteinGoal = 100;
 
-  // @ViewChild não está sendo usado no template atual, mas mantido.
   @ViewChild('waterBar', { static: false }) waterBar!: ElementRef<HTMLDivElement>;
 
   isInitialized = false;
 
   // 🔹 Construtor: ngZone é usado para forçar a detecção de mudanças em eventos fora do Angular
-  constructor(private ngZone: NgZone) {} 
+  constructor(private ngZone: NgZone) {}
 
   ngOnInit() {
-    const user = this.auth.currentUser;
-
-    // TODO: Usar onAuthStateChanged para garantir que a autenticação esteja completa
-    if (user) {
-      this.loadUserName(user.uid, user.email);
-    } 
+    // 💡 CORREÇÃO: Usar onAuthStateChanged para esperar o estado de autenticação do Firebase.
+    onAuthStateChanged(this.auth, (user: User | null) => {
+      // ngZone.run garante que o Angular detecte as mudanças
+      this.ngZone.run(() => {
+        if (user) {
+          // Se o usuário estiver autenticado, carregamos os dados
+          this.loadUserName(user.uid, user.email);
+        } else {
+          // Se não houver usuário logado (ex: sessão expirada)
+          this.userName = 'Usuário';
+          // Opcional: redirecionar para login
+          // this.router.navigate(['/login'], { replaceUrl: true });
+        }
+      });
+    });
   }
 
   async loadUserName(uid: string, email?: string | null) {
     try {
       const ref = doc(this.firestore, 'usuarios', uid);
       const snap = await getDoc(ref);
+      
       if (snap.exists()) {
-        this.userName = snap.data()['nome'] || 'Usuário';
+        // 1. Tenta pegar o nome completo
+        const nomeCompleto = snap.data()['nome'];
+        
+        if (nomeCompleto) {
+          // 2. Pega apenas o primeiro nome (ex: "João Silva" -> "João")
+          this.userName = nomeCompleto.split(' ')[0];
+        } else {
+          this.userName = 'Usuário';
+        }
       } else {
+        // Fallback: usar a parte antes do @ do email
         this.userName = email?.split('@')[0] || 'Usuário';
       }
     } catch (err) {
       console.error('Erro ao buscar nome:', err);
+      // Fallback em caso de erro na busca
       this.userName = email?.split('@')[0] || 'Usuário';
     }
   }
@@ -124,7 +145,7 @@ export class HomePage implements OnInit, AfterViewInit {
 
   // --- MÉTODOS DE ÁGUA ---
 
-  // Este método não é chamado no HTML, mas mantido por segurança.
+  // Método onWaterBarClick (mantido)
   onWaterBarClick(event: MouseEvent) {
     if (!this.isInitialized) return;
 
@@ -142,49 +163,50 @@ export class HomePage implements OnInit, AfterViewInit {
     });
   }
 
-  // ✅ Método decrementWater (requerido pelo HTML)
+  // ✅ Método decrementWater
   decrementWater() {
     if (!this.isInitialized) return;
     if (this.waterCurrent > 0) {
       const newVal = this.waterCurrent - 0.1;
-      this.waterCurrent = parseFloat(newVal.toFixed(2).replace(',', '.'));
+      this.waterCurrent = parseFloat(newVal.toFixed(2));
     }
   }
 
-  // ✅ Método incrementWater (requerido pelo HTML)
+  // ✅ Método incrementWater
   incrementWater() {
     if (!this.isInitialized) return;
     if (this.waterCurrent < this.waterGoal) {
       const newVal = this.waterCurrent + 0.1;
-      this.waterCurrent = parseFloat(newVal.toFixed(2).replace(',', '.'));
+      this.waterCurrent = parseFloat(newVal.toFixed(2));
     }
   }
 
-  // ✅ Getter waterPercentage (requerido pelo HTML)
+  // ✅ Getter waterPercentage
   get waterPercentage() {
     return (this.waterCurrent / this.waterGoal) * 100;
   }
 
   // --- MÉTODOS DE PROTEÍNAS ---
 
-  // ✅ Método decrementProtein (requerido pelo HTML)
+  // ✅ Método decrementProtein
   decrementProtein() {
     if (!this.isInitialized) return;
     if (this.proteinCurrent > 0) this.proteinCurrent -= 1;
   }
 
-  // ✅ Método incrementProtein (requerido pelo HTML)
+  // ✅ Método incrementProtein
   incrementProtein() {
     if (!this.isInitialized) return;
     if (this.proteinCurrent < this.proteinGoal) this.proteinCurrent += 1;
   }
 
-  // ✅ Getter proteinPercentage (requerido pelo HTML)
+  // ✅ Getter proteinPercentage
   get proteinPercentage() {
     return (this.proteinCurrent / this.proteinGoal) * 100;
   }
 
   
+  // --- MÉTODOS DE NAVEGAÇÃO ---
   
   goToHome() {
     this.router.navigate(['/home']);
@@ -199,7 +221,7 @@ export class HomePage implements OnInit, AfterViewInit {
   }
 
   goToConfiguracoes() {
-    this.router.navigate(['/settings']);
+    this.router.navigate(['/configuracoes']);
   }
 
   

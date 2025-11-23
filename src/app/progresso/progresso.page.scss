@@ -1,22 +1,16 @@
-/* Este arquivo deve ser salvo como src/app/progresso/progresso.page.scss */
 
-/* 1. Define o fundo do conteúdo da página (a área que rola) como branco */
 ion-content {
   --background: white;
 }
 
-/* 2. Estilos do Rodapé (Copiados da Home para consistência) */
 
 ion-tab-bar {
-  /* Fundo branco e uma linha de borda sutil no topo */
   --background: #fff;
   border-top: 1px solid #ddd;
 }
 
 ion-tab-button {
-  /* Cor dos ícones e labels padrão */
   --color: #888;
-  /* Cor dos ícones e labels selecionados (um azul vibrante) */
   --color-selected: #007aff;
 }
 
@@ -26,4 +20,8 @@ ion-tab-button ion-icon {
 
 ion-tab-button ion-label {
   font-size: 0.75em;
+}
+ion-header ion-toolbar {
+  --background: #007aff;
+  --color: #fff; 
 }

@@ -17,7 +17,7 @@ addIcons({ arrowBackOutline });
   standalone: true,
   imports: [
     IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonButton,
-    IonIcon, IonItem, IonLabel, IonList,
+    IonIcon, IonItem, IonLabel,
     IonAccordionGroup, IonAccordion
   ]
 })

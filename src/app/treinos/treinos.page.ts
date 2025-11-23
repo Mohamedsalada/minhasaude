@@ -92,12 +92,10 @@ export class TreinosPage {
   }
 
   goToConfiguracoes() {
-    this.router.navigate(['/settings']);
+    this.router.navigate(['/configuracoes']);
   }
 
-  // -------------------------
-  // 🟦 BOTÕES "ir" DOS TREINOS
-  // -------------------------
+
   goToIniciante() {
     this.router.navigate(['/iniciante']);
   }
