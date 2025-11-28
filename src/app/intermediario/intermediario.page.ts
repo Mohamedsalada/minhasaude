@@ -1,14 +1,28 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+
 import {
-  IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonButton,
-  IonIcon, IonItem, IonLabel, IonList, IonAccordionGroup, IonAccordion
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonContent,
+  IonButtons,
+  IonButton,
+  IonIcon,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonItemDivider,
+  IonListHeader,
+  IonAccordionGroup,
+  IonAccordion,IonCard,
 } from '@ionic/angular/standalone';
 
 import { addIcons } from 'ionicons';
-import { arrowBackOutline } from 'ionicons/icons';
+import { arrowBackOutline, chevronDownOutline } from 'ionicons/icons';
 
-addIcons({ arrowBackOutline });
+addIcons({ arrowBackOutline, chevronDownOutline });
 
 @Component({
   selector: 'app-intermediario',
@@ -16,9 +30,25 @@ addIcons({ arrowBackOutline });
   styleUrls: ['./intermediario.page.scss'],
   standalone: true,
   imports: [
-    IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonButton,
-    IonIcon, IonItem, IonLabel,
-    IonAccordionGroup, IonAccordion
+    CommonModule,
+
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+
+    IonButtons,
+    IonButton,
+    IonIcon,
+
+    IonItem,
+    IonLabel,
+    IonList,
+    IonItemDivider,
+    IonListHeader,
+
+    IonAccordionGroup,
+    IonAccordion, IonCard,
   ]
 })
 export class IntermediarioPage {

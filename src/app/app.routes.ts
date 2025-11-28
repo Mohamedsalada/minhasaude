@@ -40,7 +40,7 @@ export const routes: Routes = [
   // Rota raiz sempre redireciona para login
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'inicial',
     pathMatch: 'full',
   },
   {
@@ -63,5 +63,10 @@ export const routes: Routes = [
     path: 'configuracoes',
     loadComponent: () => import('./configuracoes/configuracoes.page').then( m => m.ConfiguracoesPage)
   },
+  {
+    path: 'inicial',
+    loadComponent: () => import('./inicial/inicial.page').then( m => m.InicialPage)
+  },
+
 
 ];

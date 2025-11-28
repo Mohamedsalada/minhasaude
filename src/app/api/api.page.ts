@@ -21,6 +21,7 @@ import {
   IonSearchbar,
   IonChip,
   IonImg,
+  IonCard,
   IonButton,
   IonIcon, 
 } from '@ionic/angular/standalone';
@@ -45,7 +46,7 @@ import {
     IonImg,
     IonButton,
     IonIcon, 
-    IonListHeader,
+    IonListHeader,IonCard,
   ],
 })
 export class ApiPage implements OnInit {

@@ -1,8 +1,22 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+
 import {
-  IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonButton,
-  IonIcon, IonItem, IonLabel, IonList, IonAccordionGroup, IonAccordion
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonContent,
+  IonButtons,
+  IonButton,
+  IonIcon,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonItemDivider,
+  IonListHeader,
+  IonAccordionGroup,
+  IonAccordion,IonCard,
 } from '@ionic/angular/standalone';
 
 import { addIcons } from 'ionicons';
@@ -16,9 +30,24 @@ addIcons({ arrowBackOutline });
   styleUrls: ['./avancado.page.scss'],
   standalone: true,
   imports: [
-    IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonButton,
-    IonIcon, IonItem, IonLabel,
-    IonAccordionGroup, IonAccordion
+    CommonModule,
+
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+
+    IonButtons,
+    IonButton,
+    IonIcon,
+    IonCard,
+    IonItem,
+    IonLabel,
+    IonList,
+    IonItemDivider,
+    IonListHeader,
+    IonAccordionGroup,
+    IonAccordion,
   ]
 })
 export class AvancadoPage {

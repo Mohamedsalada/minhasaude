@@ -1,14 +1,29 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+
 import {
-  IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonButton,
-  IonIcon, IonItem, IonLabel, IonList, IonAccordionGroup, IonAccordion
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonContent,
+  IonButtons,
+  IonButton,
+  IonIcon,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonItemDivider,
+  IonListHeader,
+  IonAccordionGroup,
+  IonCard,
+  IonAccordion,
 } from '@ionic/angular/standalone';
 
 import { addIcons } from 'ionicons';
-import { arrowBackOutline } from 'ionicons/icons';
+import { arrowBackOutline, chevronDownOutline } from 'ionicons/icons';
 
-addIcons({ arrowBackOutline });
+addIcons({ arrowBackOutline, chevronDownOutline });
 
 @Component({
   selector: 'app-iniciante',
@@ -16,9 +31,26 @@ addIcons({ arrowBackOutline });
   styleUrls: ['./iniciante.page.scss'],
   standalone: true,
   imports: [
-    IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonButton,
-    IonIcon, IonItem, IonLabel, IonList,
-    IonAccordionGroup, IonAccordion
+    CommonModule,
+
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+
+    IonButtons,
+    IonButton,
+    IonIcon,
+
+    IonItem,
+    IonLabel,
+    IonList,
+    IonCard,
+    IonItemDivider,
+    IonListHeader,
+
+    IonAccordionGroup,
+    IonAccordion,
   ]
 })
 export class IniciantePage {

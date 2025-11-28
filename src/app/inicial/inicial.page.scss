@@ -1,0 +1,54 @@
+.login-background {
+  --background: #ffffff; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.login-container {
+  width: 90%;
+  max-width: 380px;
+  background: linear-gradient(to bottom, #4da3ff -0.7%, #ffffff 27%);
+  border-radius: 20px;
+  padding: 100px 50px 70px 50px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  position: relative;
+  margin: auto;
+  text-align: center; 
+  height: 17cm;
+}
+
+.logo {
+  margin-bottom: 40px; 
+  width: 7cm;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  left: 14px;
+ 
+}
+
+
+#button{
+    position: relative;
+    width: 3cm;
+    margin-left: 4cm;
+   top: 3cm;
+
+}
+
+h4{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+text-shadow: 0.2px 0px 0px #000000;
+    color: #287ad2;
+}
+
+
+
+
+
+
+
+
+
