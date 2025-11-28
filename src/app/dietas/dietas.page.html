@@ -3,21 +3,21 @@
     <ion-title>Dieta</ion-title>
     
       <ion-buttons slot="end">
-      <ion-button (click)="goToHome()" color="primary">
+      <ion-button (click)="goToHome()" >
         <ion-icon slot="icon-only" name="restaurant-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
 
   </ion-toolbar>
 </ion-header>
-
+           
 <ion-content class="ion-padding">
+  
   <form [formGroup]="form" (ngSubmit)="salvar()">
     <ion-item>
       <ion-label position="stacked">Título</ion-label>
       <ion-input formControlName="titulo" type="text" placeholder="Ex: Dieta de 2000 kcal"></ion-input>
     </ion-item>
-
     <div *ngIf="form.controls['titulo'].touched && form.controls['titulo'].invalid" class="error">
       <small *ngIf="form.controls['titulo'].errors?.['required']">Título obrigatório.</small>
       <small *ngIf="form.controls['titulo'].errors?.['minlength']">Mínimo 2 caracteres.</small>

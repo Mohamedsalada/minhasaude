@@ -1,6 +1,5 @@
 <ion-header>
-  <ion-toolbar > 
-    
+  <ion-toolbar>
     <ion-title>Progresso</ion-title>
 
     <ion-buttons slot="end">
@@ -18,14 +17,52 @@
     Tirar Foto do Progresso
   </ion-button>
 
-  <div style="margin-top: 20px;" if="foto()">
-    <img [src]="foto()!" style="width: 100%; border-radius: 12px;" />
-  </div>
+  <h2 style="margin-top: 16px;">Histórico de Progresso</h2>
+
+  <!-- Lista de Fotos Salvas -->
+  @for (item of fotosSalvas(); track $index) {
+    <div style="margin-top: 20px;" (click)="abrirFoto(item.dataUrl)">
+      <img [src]="item.dataUrl" style="width: 100%; border-radius: 12px;" />
+      <p style="text-align:center; margin-top: 6px; font-size:14px; color:#888;">
+        Tirada em: {{ item.data }}
+      </p>
+    </div>
+  }
+
+  <!-- Visualizador Tela Cheia -->
+  @if (mostrarFoto()) {
+    <div style="
+      position:fixed; inset:0;
+      background: rgba(0,0,0,0.9);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      z-index:9999;
+      padding:20px;">
+      
+      <div style="width:100%; max-width:900px;">
+        <img [src]="foto()!" style="width:100%; border-radius:12px; margin-bottom:16px;" />
+
+        <ion-button expand="full" color="danger" (click)="excluirFoto()">
+          <ion-icon slot="start" name="trash-outline"></ion-icon>
+          Excluir Foto
+        </ion-button>
+
+        <ion-button expand="full" color="light" class="ion-margin-top" (click)="fecharFoto()">
+          <ion-icon slot="start" name="close-outline"></ion-icon>
+          Fechar
+        </ion-button>
+      </div>
+
+    </div>
+  }
 
 </ion-content>
 
 <ion-footer>
   <ion-tab-bar slot="bottom">
+
     <ion-tab-button tab="home" (click)="goToHome()">
       <ion-icon name="home-outline"></ion-icon>
       <ion-label>Início</ion-label>
@@ -45,5 +82,6 @@
       <ion-icon name="settings-outline"></ion-icon>
       <ion-label>Configurações</ion-label>
     </ion-tab-button>
+
   </ion-tab-bar>
 </ion-footer>

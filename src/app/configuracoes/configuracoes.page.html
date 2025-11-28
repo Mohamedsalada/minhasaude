@@ -29,7 +29,30 @@
     <ion-icon slot="start" name="log-out-outline"></ion-icon>
     Sair da Conta (Logout)
   </ion-button>
-  
-  
-
 </ion-content>
+  
+<ion-footer>
+  <ion-tab-bar slot="bottom">
+
+    <ion-tab-button tab="home" (click)="goToHome()">
+      <ion-icon name="home-outline"></ion-icon>
+      <ion-label>Início</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="treinos" (click)="goToTreinos()">
+      <ion-icon name="barbell-outline"></ion-icon>
+      <ion-label>Treinos</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="progress" (click)="goToProgresso()">
+      <ion-icon name="trending-up-outline"></ion-icon>
+      <ion-label>Progresso</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="settings" (click)="goToConfiguracoes()">
+      <ion-icon name="settings-outline"></ion-icon>
+      <ion-label>Configurações</ion-label>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+</ion-footer>

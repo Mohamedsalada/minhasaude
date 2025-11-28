@@ -20,17 +20,25 @@ import {
   homeOutline,      
   barbellOutline,  
   trendingUpOutline, 
-  settingsOutline,  
+  settingsOutline,
+  closeOutline,
+  trashOutline  
 } from 'ionicons/icons';
-
 
 addIcons({ 
   home, 
   homeOutline, 
   barbellOutline, 
   trendingUpOutline, 
-  settingsOutline 
+  settingsOutline,
+  closeOutline,
+  trashOutline
 });
+
+interface FotoSalva {
+  dataUrl: string;
+  data: string;
+}
 
 @Component({
   selector: 'app-progresso',
@@ -52,9 +60,14 @@ addIcons({
   ],
 })
 export class ProgressoPage {
-  constructor(private router: Router) {}
+  
+  constructor(private router: Router) {
+    this.carregarFotosSalvas();
+  }
 
   foto = signal<string | null>(null);
+  mostrarFoto = signal<boolean>(false);
+  fotosSalvas = signal<FotoSalva[]>([]);
 
   async tirarFoto() {
     try {
@@ -65,34 +78,53 @@ export class ProgressoPage {
       });
 
       if (imagem.dataUrl) {
-        this.foto.set(imagem.dataUrl);
+        const novaFoto: FotoSalva = {
+          dataUrl: imagem.dataUrl,
+          data: new Date().toLocaleDateString('pt-BR')
+        };
+
+        const lista = [...this.fotosSalvas(), novaFoto];
+        this.fotosSalvas.set(lista);
+
+        localStorage.setItem('fotosProgresso', JSON.stringify(lista));
       }
     } catch (e) {
       console.error('Erro ao tirar foto:', e);
     }
   }
 
-  goToHome() {
-    this.router.navigate(['/home']);
+  carregarFotosSalvas() {
+    const fotos = localStorage.getItem('fotosProgresso');
+    if (fotos) {
+      this.fotosSalvas.set(JSON.parse(fotos));
+    }
   }
 
-  goToTreinos() {
-    this.router.navigate(['/treinos']);
+  abrirFoto(foto: string) {
+    this.foto.set(foto);
+    this.mostrarFoto.set(true);
   }
 
-  goToProgresso() {
-    this.router.navigate(['/progresso']);
+  fecharFoto() {
+    this.mostrarFoto.set(false);
   }
 
-  goToConfiguracoes() {
-    this.router.navigate(['/configuracoes']);
+  excluirFoto() {
+    const fotoAtual = this.foto();
+    if (!fotoAtual) return;
+
+    const novaLista = this.fotosSalvas().filter(f => f.dataUrl !== fotoAtual);
+
+    this.fotosSalvas.set(novaLista);
+    localStorage.setItem('fotosProgresso', JSON.stringify(novaLista));
+
+    this.fecharFoto();
   }
-  
-  goToApi() {
-    this.router.navigate(['/api']); 
-  }
-  
-  goToCardapio() {
-    this.router.navigate(['/refeicao']); 
-  }
+
+  goToHome() { this.router.navigate(['/home']); }
+  goToTreinos() { this.router.navigate(['/treinos']); }
+  goToProgresso() { this.router.navigate(['/progresso']); }
+  goToConfiguracoes() { this.router.navigate(['/configuracoes']); }
+  goToApi() { this.router.navigate(['/api']); }
+  goToCardapio() { this.router.navigate(['/refeicao']); }
 }

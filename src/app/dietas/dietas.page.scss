@@ -1,0 +1,66 @@
+/* Fundo geral */
+ion-content {
+  --background: #eef1f5;
+}
+
+/* Card branco do formulário + lista */
+form,
+ion-list {
+  background: #ffffff;
+  padding: 18px;
+  margin-top: 16px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Garante que o texto fique escuro */
+ion-item,
+ion-label,
+ion-input,
+ion-textarea,
+h2,
+p,
+small {
+  color: #1a1a1a !important;
+}
+
+/* Corrige placeholder */
+ion-input::part(placeholder),
+ion-textarea::part(placeholder) {
+  color: #666 !important;
+}
+
+/* Data e texto secundário */
+ion-note {
+  color: #555 !important;
+}
+
+/* Cabeçalho da lista */
+ion-list-header ion-label {
+  color: #007aff !important;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+/* Remover fundo interno do item */
+ion-item {
+  --background: transparent;
+}
+
+/* Erros de validação */
+.error small {
+  color: #d9534f !important;
+}
+
+/* Cabeçalho da página */
+ion-header ion-toolbar {
+  --background: #007aff;
+  --color: #fff;
+}
+
+/* Botões alinhados */
+.buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 14px;
+}
