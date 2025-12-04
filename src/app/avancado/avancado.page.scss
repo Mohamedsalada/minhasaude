@@ -1,26 +1,100 @@
-.exercise-card {
-  background: #ffffff;
-  border-radius: 14px;
-  padding: 15px;
-  margin-bottom: 12px;
-  box-shadow: 0 3px 12px rgba(0,0,0,0.07);
-  text-align: center;
+/* 1. PADRONIZAÇÃO GERAL DA PÁGINA */
+
+ion-content {
+    /* Força o fundo da tela para branco/cinza claro, anulando o Dark Mode */
+    --background: #f8f8f8 !important;
 }
 
-.exercise-card img {
-  width: 100%;
-  max-width: 220px;
-  border-radius: 12px;
-  margin-bottom: 10px;
-}
-
-.exercise-card p {
-  font-size: 17px;
-  font-weight: 600;
-  margin: 0;
-}
+/* 2. ESTILOS DO HEADER */
 ion-header ion-toolbar {
- 
-  --background: #007aff;
-  --color: #fff; 
+    --background: #007aff !important; /* Azul forte */
+    --color: #fff !important;        /* Texto/Ícones Brancos */
+}
+ion-header ion-button {
+    --color: #fff !important;
+}
+
+.title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    color: #333 !important;
+}
+
+/* 3. CORREÇÃO DO ACCORDION (REMOVENDO PONTAS PRETAS E FUNDO ESCURO) */
+
+ion-accordion-group {
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+}
+
+ion-accordion {
+    margin-bottom: 12px;
+    
+    /* VARIÁVEIS DO IONIC FORÇANDO O BRANCO NO MODO ESCURO */
+    --background: #ffffff !important;
+    --background-hover: #f9f9f9 !important;
+    --border-color: transparent !important;
+    
+    /* CORREÇÃO DAS BORDAS/PONTAS PRETAS */
+    --inner-padding-start: 0 !important;
+    --inner-padding-end: 0 !important;
+    --padding-start: 0 !important;
+    --padding-end: 0 !important;
+    border: none !important;
+
+    /* Estilo do cartão */
+    --border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --color: #333 !important;
+}
+
+/* Cabeçalho do Accordion (O ITEM) */
+ion-accordion ion-item[slot="header"] {
+    --background: #ffffff !important;
+    --color: #333 !important;
+    font-weight: bold;
+    font-size: 15px;
+    
+    /* ZERA TODAS AS LINHAS E BORDAS */
+    --border-width: 0 !important;
+    --inner-border-width: 0 !important; 
+    
+    padding: 0 16px;
+}
+
+ion-accordion ion-item[slot="header"] ion-icon {
+    color: #333 !important;
+}
+
+/* 4. ESTILOS DOS EXERCÍCIOS INTERNOS */
+
+.accordion-content {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: #ffffff !important;
+    border-top: 1px solid #f0f0f0;
+}
+
+.exercise-card-item {
+    --background: #ffffff !important; 
+    --color: #555 !important; 
+    font-size: 15px;
+    padding: 5px 0;
+    margin-bottom: 0;
+    
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    
+    --inner-border-width: 0 !important; 
+    --border-width: 0 !important;
+}
+
+.exercise-card-item ion-label {
+    font-size: 15px;
+    font-weight: normal;
+    text-align: left;
+    padding: 8px 16px;
 }

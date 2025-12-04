@@ -10,14 +10,11 @@ import {
   IonButtons,
   IonButton,
   IonIcon,
-  IonItem,
-  IonLabel,
-  IonList,
-  IonItemDivider,
-  IonListHeader,
-  IonAccordionGroup,
-  IonCard,
-  IonAccordion,
+  IonItem, // Necessário para exibir os exercícios
+  IonLabel, // Necessário para exibir os exercícios
+  // Removido: IonList, IonItemDivider, IonListHeader, IonCard (não estão no HTML)
+  IonAccordionGroup, // Necessário para o grupo de treinos
+  IonAccordion, // Necessário para cada dia de treino
 } from '@ionic/angular/standalone';
 
 import { addIcons } from 'ionicons';
@@ -44,11 +41,7 @@ addIcons({ arrowBackOutline, chevronDownOutline });
 
     IonItem,
     IonLabel,
-    IonList,
-    IonCard,
-    IonItemDivider,
-    IonListHeader,
-
+    
     IonAccordionGroup,
     IonAccordion,
   ]

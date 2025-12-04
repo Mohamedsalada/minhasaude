@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
 import { ScreenOrientation } from '@awesome-cordova-plugins/screen-orientation/ngx';
+import { Platform } from '@ionic/angular';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +10,13 @@ import { ScreenOrientation } from '@awesome-cordova-plugins/screen-orientation/n
   providers: [ScreenOrientation],
 })
 export class AppComponent {
-  constructor(private screenOrientation: ScreenOrientation) {
-    
-    this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
+  constructor(
+    private platform: Platform,
+    private screenOrientation: ScreenOrientation
+  ) {
+    this.platform.ready().then(() => {
+      // Travar orientação
+      this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
+    });
   }
 }
-

@@ -12,17 +12,15 @@ import {
   IonIcon,
   IonItem,
   IonLabel,
-  IonList,
-  IonItemDivider,
-  IonListHeader,
+  // Removido: IonList, IonItemDivider, IonListHeader, IonCard (limpeza)
   IonAccordionGroup,
-  IonAccordion,IonCard,
+  IonAccordion,
 } from '@ionic/angular/standalone';
 
 import { addIcons } from 'ionicons';
-import { arrowBackOutline } from 'ionicons/icons';
+import { arrowBackOutline, chevronDownOutline } from 'ionicons/icons'; // Adicionei chevronDownOutline que faltava
 
-addIcons({ arrowBackOutline });
+addIcons({ arrowBackOutline, chevronDownOutline });
 
 @Component({
   selector: 'app-avancado',
@@ -40,12 +38,10 @@ addIcons({ arrowBackOutline });
     IonButtons,
     IonButton,
     IonIcon,
-    IonCard,
+
     IonItem,
     IonLabel,
-    IonList,
-    IonItemDivider,
-    IonListHeader,
+    
     IonAccordionGroup,
     IonAccordion,
   ]

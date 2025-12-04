@@ -1,156 +1,162 @@
+/* Permitir scroll normalmente */
 html, body {
     height: 100%;
-    overflow: hidden; 
+    overflow: auto !important;
 }
 
-
+/* Garantir que a página ocupe 100% da altura */
 app-root, :host {
     display: block;
     height: 100%;
 }
 
+/* --- CORREÇÃO DO HEADER (TOPO APAGADO) --- */
 
-
-:host {
-    display: block;
-    height: 100%;
+/* Fundo do Header (barra de navegação) */
+ion-header ion-toolbar {
+    --background: #007aff; /* Fundo azul do topo */
+    --color: #fff;        /* Texto do título (Busca Nutricional) branco */
 }
 
+/* Título e ícones do Header */
+ion-header [translucent="true"] {
+    --color: #fff;
+}
+
+/* --- CONFIGURAÇÃO DE FUNDO E CONTEÚDO --- */
+
+/* Fundo padrão */
 ion-content {
-   
-    --background: #f8f8f8; 
+    --background: #f8f8f8;
+    overflow-y: auto; /* SCROLL funcionando */
 }
 
+/* Fundo geral da página (container-fundo está no ion-content) */
 .container-fundo {
-   
-   background: #f8f8f8;
+    background: #f8f8f8;
 }
 
+/* Container principal (fundo branco do cartão) */
 .container {
-    
-    position: static;
-    left: auto;
-    margin: 0 auto;
-    
-    width: 90%; 
+    width: 90%;
     max-width: 430px;
-    border-radius: 30px 30px 0 0; 
-   
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
-    text-align: left; 
-    padding: 20px;
+    margin: 0 auto;
     background: #fff;
+
+    border-radius: 30px 30px 0 0;
+    padding: 20px;
+
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
     position: relative;
     top: -3px;
-    margin: 0 auto;
-    padding: 20px;
-    overflow: hidden;
-    z-index: 10;
-}   
 
-
-
-ion-searchbar {
-  
-    --border-radius: 10px;
-    --background: #f0f0f0a4;
-    margin-bottom: 15px; 
-    box-shadow: none; 
+    overflow: visible !important;
 }
 
+/* Barra de pesquisa */
+ion-searchbar {
+    --border-radius: 10px;
+    --background: #f0f0f0a4; /* Fundo cinza claro */
+    margin-bottom: 15px;
+    box-shadow: none;
+    --color: #333; /* Cor do texto digitado */
+}
+
+/* --- FILTROS (CHIPS) --- */
+
+/* Filtros com scroll horizontal */
 .filters-container {
     display: flex;
-    overflow-x: auto;
+    overflow-x: auto; /* Garante a ROLAGEM HORIZONTAL */
     padding-bottom: 10px;
     gap: 8px;
+    /* Linhas removidas para permitir a barra de rolagem visual, se o browser suportar */
 }
 
 .filters-container ion-chip {
-    flex-shrink: 0; 
+    flex-shrink: 0; /* Impede que os chips encolham, garantindo que caiba no scroll */
     --background: #e0e0e0;
     color: #333;
     font-weight: 500;
 }
 
+/* --- LISTA E ITENS --- */
 
+/* Título de sessão */
+ion-list-header {
+    --background: transparent;
+    padding: 0;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
 
+ion-list-header ion-label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Itens do cardápio */
 .cardapio-item {
-   
     display: flex;
-   
     align-items: center;
-    
-    padding: 15px 0; 
-    border-bottom: 1px solid #eee; 
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
 }
 
-
-.cardapio-item ion-img {
-
-    width: 70px;
-    height: 70px;
-    object-fit: cover;
-    margin-right: 15px;
-    
-    border-radius: 12px; 
-}
-
-
+/* Textos */
 .peso-container {
-
     flex-grow: 1;
-  
-    position: static;
-    left: auto;
-    top: auto;
-    text-align: left; 
+    text-align: left;
+    margin-right: 10px;
 }
 
 .peso-container h3 {
     font-size: 16px;
     font-weight: bold;
     margin: 0 0 2px 0;
+    color: #333;
 }
 
 .peso-container h6 {
     font-size: 13px;
     color: #666;
     margin: 1px 0;
-    
     line-height: 1.2;
 }
 
+/* --- BOTÃO DE ADICIONAR (+) --- */
 
 .add-to-cart-button {
-   
-    margin-left: auto; 
-   
-    position: static;
-    top: auto;
-    left: auto;
+    width: 40px;
+    height: 40px;
+    margin: 0;
     
-   
-    width: 30px; 
-    height: 30px; 
+    --padding-start: 0;
+    --padding-end: 0;
+
+    --background: #0066ff;
+    --background-activated: #0053cc;
+    --border-radius: 10px;
     
-   
-    --background-activated: #e0e0e0;
-    --border-color: #ddd;
-    --border-width: 1px;
-    --color: #333; 
-    font-size: 1px;
-    
-    
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    
-    ion-icon {
-        font-size: 20px; 
-        color: #333; 
-    }
-}
-ion-header ion-toolbar {
-  --background: #007aff;
-  --color: #fff; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+.add-to-cart-button ion-icon {
+    font-size: 22px;
+    color: #fff;
+}
+
+/* --- BOTÃO PRINCIPAL (DIETA) --- */
+
+.menu-button-container {
+    margin-top: 30px !important;
+    margin-bottom: 20px !important;
+}
+
+.menu-button-container ion-button {
+    --border-radius: 10px;
+    height: 48px;
+}

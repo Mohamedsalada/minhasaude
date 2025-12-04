@@ -3,20 +3,18 @@ import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 import {
-  IonHeader,
-  IonToolbar,
-  IonTitle,
-  IonContent,
-  IonButtons,
-  IonButton,
-  IonIcon,
-  IonItem,
-  IonLabel,
-  IonList,
-  IonItemDivider,
-  IonListHeader,
-  IonAccordionGroup,
-  IonAccordion,IonCard,
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonContent,
+  IonButtons,
+  IonButton,
+  IonIcon,
+  IonItem,
+  IonLabel,
+  // Removido: IonList, IonItemDivider, IonListHeader, IonCard (não estão no HTML)
+  IonAccordionGroup,
+  IonAccordion,
 } from '@ionic/angular/standalone';
 
 import { addIcons } from 'ionicons';
@@ -25,37 +23,34 @@ import { arrowBackOutline, chevronDownOutline } from 'ionicons/icons';
 addIcons({ arrowBackOutline, chevronDownOutline });
 
 @Component({
-  selector: 'app-intermediario',
-  templateUrl: './intermediario.page.html',
-  styleUrls: ['./intermediario.page.scss'],
-  standalone: true,
-  imports: [
-    CommonModule,
+  selector: 'app-intermediario',
+  templateUrl: './intermediario.page.html',
+  styleUrls: ['./intermediario.page.scss'],
+  standalone: true,
+  imports: [
+    CommonModule,
 
-    IonHeader,
-    IonToolbar,
-    IonTitle,
-    IonContent,
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonContent,
 
-    IonButtons,
-    IonButton,
-    IonIcon,
+    IonButtons,
+    IonButton,
+    IonIcon,
 
-    IonItem,
-    IonLabel,
-    IonList,
-    IonItemDivider,
-    IonListHeader,
+    IonItem, // Necessário para exibir os exercícios
+    IonLabel, // Necessário para exibir os exercícios
 
-    IonAccordionGroup,
-    IonAccordion, IonCard,
-  ]
+    IonAccordionGroup, // Necessário para a lista de dias
+    IonAccordion, // Necessário para cada dia
+  ]
 })
 export class IntermediarioPage {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {}
 
-  goBack() {
-    this.router.navigate(['/treinos']);
-  }
+  goBack() {
+    this.router.navigate(['/treinos']);
+  }
 }

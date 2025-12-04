@@ -1,176 +1,171 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-button (click)="goBack()">
-        <ion-icon name="arrow-back-outline"></ion-icon>
-      </ion-button>
-    </ion-buttons>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
 
-    <ion-title>Treino Avançado</ion-title>
-  </ion-toolbar>
+    <ion-title>Treino Avançado</ion-title>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
 
-  <h1 class="title">Dias de treino</h1>
+  <h1 class="title">Dias de treino</h1>
 
-  <ion-accordion-group expand="compact">
+  <ion-accordion-group expand="compact">
 
-    <!-- DIA 1 - PEITO + OMBRO -->
-    <ion-accordion value="dia1" toggle-icon="chevron-down-outline">
-      <ion-item slot="header">
-        <ion-label>Dia 1 • Peito + Ombro</ion-label>
-      </ion-item>
+        <ion-accordion value="dia1" toggle-icon="chevron-down-outline">
+      <ion-item slot="header">
+        <ion-label>Dia 1 • Peito + Ombro</ion-label>
+      </ion-item>
 
-      <div class="accordion-content" slot="content">
+      <div class="accordion-content" slot="content">
 
-        <div class="exercise-card">
-          <p>Supino reto pesado – 5x5</p>
-        </div>
+        <ion-item lines="none" class="exercise-card-item">
+            <ion-label>Supino reto pesado – 5x5</ion-label>
+        </ion-item>
 
-        <div class="exercise-card">
-          <p>Supino inclinado – 4x8</p>
-        </div>
+        <ion-item lines="none" class="exercise-card-item">
+            <ion-label>Supino inclinado – 4x8</ion-label>
+        </ion-item>
 
-        <div class="exercise-card">
-          <p>Crucifixo inclinado – 4x10</p>
-        </div>
+        <ion-item lines="none" class="exercise-card-item">
+            <ion-label>Crucifixo inclinado – 4x10</ion-label>
+        </ion-item>
 
-        <div class="exercise-card">
-          <p>Desenvolvimento militar – 4x8</p>
-        </div>
+        <ion-item lines="none" class="exercise-card-item">
+            <ion-label>Desenvolvimento militar – 4x8</ion-label>
+        </ion-item>
 
-        <div class="exercise-card">
-          <p>Elevação lateral – 4x12</p>
-        </div>
+        <ion-item lines="none" class="exercise-card-item">
+            <ion-label>Elevação lateral – 4x12</ion-label>
+        </ion-item>
 
-      </div>
-    </ion-accordion>
+      </div>
+    </ion-accordion>
 
-    <!-- DIA 2 - COSTAS + TRAPÉZIO -->
-    <ion-accordion value="dia2" toggle-icon="chevron-down-outline">
-      <ion-item slot="header">
-        <ion-label>Dia 2 • Costas + Trapézio</ion-label>
-      </ion-item>
+        <ion-accordion value="dia2" toggle-icon="chevron-down-outline">
+      <ion-item slot="header">
+        <ion-label>Dia 2 • Costas + Trapézio</ion-label>
+      </ion-item>
 
-      <div class="accordion-content" slot="content">
+      <div class="accordion-content" slot="content">
 
-        <div class="exercise-card">
-          <p>Barra fixa – 5x6-8</p>
-        </div>
+        <ion-item lines="none" class="exercise-card-item">
+            <ion-label>Barra fixa – 5x6-8</ion-label>
+        </ion-item>
 
-        <div class="exercise-card">
-          <p>Remada curvada – 5x8</p>
-        </div>
+        <ion-item lines="none" class="exercise-card-item">
+            <ion-label>Remada curvada – 5x8</ion-label>
+        </ion-item>
 
-        <div class="exercise-card">
-          <p>Puxada supinada – 4x10</p>
-        </div>
+        <ion-item lines="none" class="exercise-card-item">
+            <ion-label>Puxada supinada – 4x10</ion-label>
+        </ion-item>
 
-        <div class="exercise-card">
-          <p>Encolhimento de ombros – 4x12</p>
-        </div>
+        <ion-item lines="none" class="exercise-card-item">
+            <ion-label>Encolhimento de ombros – 4x12</ion-label>
+        </ion-item>
 
-        <div class="exercise-card">
-          <p>Levantamento terra – 4x6</p>
-        </div>
+        <ion-item lines="none" class="exercise-card-item">
+            <ion-label>Levantamento terra – 4x6</ion-label>
+        </ion-item>
 
-      </div>
-    </ion-accordion>
+      </div>
+    </ion-accordion>
 
-    <!-- DIA 3 - PERNAS PESADO -->
-    <ion-accordion value="dia3" toggle-icon="chevron-down-outline">
-      <ion-item slot="header">
-        <ion-label>Dia 3 • Pernas (Avançado Pesado)</ion-label>
-      </ion-item>
+        <ion-accordion value="dia3" toggle-icon="chevron-down-outline">
+      <ion-item slot="header">
+        <ion-label>Dia 3 • Pernas (Avançado Pesado)</ion-label>
+      </ion-item>
 
-      <div class="accordion-content" slot="content">
+      <div class="accordion-content" slot="content">
 
-        <div class="exercise-card">
-          <p>Agachamento livre – 5x5</p>
-        </div>
+        <ion-item lines="none" class="exercise-card-item">
+            <ion-label>Agachamento livre – 5x5</ion-label>
+        </ion-item>
 
-        <div class="exercise-card">
-          <p>Leg press muito pesado – 5x8</p>
-        </div>
+        <ion-item lines="none" class="exercise-card-item">
+            <ion-label>Leg press muito pesado – 5x8</ion-label>
+        </ion-item>
 
-        <div class="exercise-card">
-          <p>Cadeira extensora drop-set – 4x10</p>
-        </div>
+        <ion-item lines="none" class="exercise-card-item">
+            <ion-label>Cadeira extensora drop-set – 4x10</ion-label>
+        </ion-item>
 
-        <div class="exercise-card">
-          <p>Mesa flexora – 4x12</p>
-        </div>
+        <ion-item lines="none" class="exercise-card-item">
+            <ion-label>Mesa flexora – 4x12</ion-label>
+        </ion-item>
 
-        <div class="exercise-card">
-          <p>Stiff – 4x8</p>
-        </div>
+        <ion-item lines="none" class="exercise-card-item">
+            <ion-label>Stiff – 4x8</ion-label>
+        </ion-item>
 
-      </div>
-    </ion-accordion>
+      </div>
+    </ion-accordion>
 
-    <!-- DIA 4 - BÍCEPS + TRÍCEPS -->
-    <ion-accordion value="dia4" toggle-icon="chevron-down-outline">
-      <ion-item slot="header">
-        <ion-label>Dia 4 • Bíceps + Tríceps</ion-label>
-      </ion-item>
+        <ion-accordion value="dia4" toggle-icon="chevron-down-outline">
+      <ion-item slot="header">
+        <ion-label>Dia 4 • Bíceps + Tríceps</ion-label>
+      </ion-item>
 
-      <div class="accordion-content" slot="content">
+      <div class="accordion-content" slot="content">
 
-        <div class="exercise-card">
-          <p>Rosca direta pesada – 4x8</p>
-        </div>
+        <ion-item lines="none" class="exercise-card-item">
+            <ion-label>Rosca direta pesada – 4x8</ion-label>
+        </ion-item>
 
-        <div class="exercise-card">
-          <p>Rosca alternada – 4x10</p>
-        </div>
+        <ion-item lines="none" class="exercise-card-item">
+            <ion-label>Rosca alternada – 4x10</ion-label>
+        </ion-item>
 
-        <div class="exercise-card">
-          <p>Rosca martelo – 4x10</p>
-        </div>
+        <ion-item lines="none" class="exercise-card-item">
+            <ion-label>Rosca martelo – 4x10</ion-label>
+        </ion-item>
 
-        <div class="exercise-card">
-          <p>Tríceps testa – 4x10</p>
-        </div>
+        <ion-item lines="none" class="exercise-card-item">
+            <ion-label>Tríceps testa – 4x10</ion-label>
+        </ion-item>
 
-        <div class="exercise-card">
-          <p>Tríceps corda – 4x12</p>
-        </div>
+        <ion-item lines="none" class="exercise-card-item">
+            <ion-label>Tríceps corda – 4x12</ion-label>
+        </ion-item>
 
-      </div>
-    </ion-accordion>
+      </div>
+    </ion-accordion>
 
-    <!-- DIA 5 - OMBRO + PEITO EXPLOSIVO -->
-    <ion-accordion value="dia5" toggle-icon="chevron-down-outline">
-      <ion-item slot="header">
-        <ion-label>Dia 5 • Ombro + Peito Explosivo</ion-label>
-      </ion-item>
+        <ion-accordion value="dia5" toggle-icon="chevron-down-outline">
+      <ion-item slot="header">
+        <ion-label>Dia 5 • Ombro + Peito Explosivo</ion-label>
+      </ion-item>
 
-      <div class="accordion-content" slot="content">
+      <div class="accordion-content" slot="content">
 
-        <div class="exercise-card">
-          <p>Desenvolvimento militar – 5x6</p>
-        </div>
+        <ion-item lines="none" class="exercise-card-item">
+            <ion-label>Desenvolvimento militar – 5x6</ion-label>
+        </ion-item>
 
-        <div class="exercise-card">
-          <p>Elevação frontal – 4x12</p>
-        </div>
+        <ion-item lines="none" class="exercise-card-item">
+            <ion-label>Elevação frontal – 4x12</ion-label>
+        </ion-item>
 
-        <div class="exercise-card">
-          <p>Elevação lateral – 4x12</p>
-        </div>
+        <ion-item lines="none" class="exercise-card-item">
+            <ion-label>Elevação lateral – 4x12</ion-label>
+        </ion-item>
 
-        <div class="exercise-card">
-          <p>Flexão explosiva – 4x10</p>
-        </div>
+        <ion-item lines="none" class="exercise-card-item">
+            <ion-label>Flexão explosiva – 4x10</ion-label>
+        </ion-item>
 
-        <div class="exercise-card">
-          <p>Crucifixo reto – 4x12</p>
-        </div>
+        <ion-item lines="none" class="exercise-card-item">
+            <ion-label>Crucifixo reto – 4x12</ion-label>
+        </ion-item>
 
-      </div>
-    </ion-accordion>
+      </div>
+    </ion-accordion>
 
-  </ion-accordion-group>
+  </ion-accordion-group>
 
 </ion-content>
