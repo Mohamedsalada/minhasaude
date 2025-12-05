@@ -70,7 +70,7 @@ addIcons({
   ],
 })
 export class HomePage implements OnInit, AfterViewInit {
-  // ✅ Injeções de dependências:
+  // Injeções de dependências:
   private auth = inject(Auth);
   private firestore = inject(Firestore);
   private router = inject(Router);
@@ -79,24 +79,22 @@ export class HomePage implements OnInit, AfterViewInit {
   // Definindo 'Usuário' como valor padrão para evitar a saudação vazia
   userName = 'Usuário'; 
   
-  imc = 22.5;
+  imc = 0;
   imcStatus = 'Normal';
 
-  waterCurrent = 1.5;
-  waterGoal = 2.0;
+  waterCurrent = 0;
+  waterGoal = 4.0;
 
-  proteinCurrent = 70;
-  proteinGoal = 100;
+  proteinCurrent = 0;
+  proteinGoal = 200;
 
   @ViewChild('waterBar', { static: false }) waterBar!: ElementRef<HTMLDivElement>;
 
   isInitialized = false;
 
-  // 🔹 Construtor: ngZone é usado para forçar a detecção de mudanças em eventos fora do Angular
   constructor(private ngZone: NgZone) {}
 
   ngOnInit() {
-    // 💡 CORREÇÃO: Usar onAuthStateChanged para esperar o estado de autenticação do Firebase.
     onAuthStateChanged(this.auth, (user: User | null) => {
       // ngZone.run garante que o Angular detecte as mudanças
       this.ngZone.run(() => {
